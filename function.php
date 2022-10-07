@@ -1,10 +1,33 @@
 <?php
-// Check if the database is connected
+
+if (isset($_POST["submit_post"])) {
+    createPost();
+}
+
+if (isset($_POST["delete_post"])) {
+    delPost();
+}
+
+if (isset($_POST["edit_post"])) {
+    editPost();
+}
+
+if (isset($_POST["delete_com"])) {
+    delCom($_REQUEST['post_id'], $_POST["delete_com"]);
+}
+
+if (isset($_POST["submit_com"])) {
+    createCom($_REQUEST['post_id']);
+}
+
 function checkConnection()
 {
     include 'conn.php';
     if (!$conn) {
-        echo "<h3 class='container bg-warning text-dark text-center rounded-lg mb-3 p-2'>Not able to establish Database Connection!</h3>";
+        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>";
+        echo "<strong>Not able to establish Database Connection!</strong>";
+        echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>";
+        echo "</div>";
     }
 }
 
@@ -112,5 +135,3 @@ function createCom($post_id)
     header('Location: '.$header);
     exit();
 }
-
-?>

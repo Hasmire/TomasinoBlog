@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav ms-auto right-nav">
                     <a class="nav-link active me-4" aria-current="page" href="./index.php">Home</a>
-                    <a class="btn btn-outline-dark" role="button" href="./create.php">Create a Post</a>
+                    <button type="button" class="btn btn-outline-dark me-4" data-bs-toggle="modal" data-bs-target="#createModal">Create a Post</button>
                 </div>
             </div>
         </div>
@@ -71,6 +71,37 @@
                 <?php } ?>
             </div>
         </div>
+    </div>
+
+    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="createModalLabel">Editing this post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="Input1" class="form-label">Article Title</label>
+                            <input type="text" name="title" class="form-control" id="Input1" placeholder="Input title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Input2" class="form-label">Author</label>
+                            <input type="text" name="author" class="form-control" id="Input2" placeholder="Input name of author" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Input3" class="form-label">Content</label>
+                            <textarea class="form-control" name="content" id="Input3" placeholder="Lorem ipsum..." rows="12" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success" name="submit_post">Confirm</button>
+                </form>
+            </div>
+        </div>
+    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

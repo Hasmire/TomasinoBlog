@@ -19,13 +19,7 @@
     include 'function.php';
     $data = viewPost();
     $data_com = getCom();
-    if (isset($_POST["delete_post"])) {
-        delPost();
-    }
-
-    if (isset($_POST["delete_com"])) {
-        delCom($_REQUEST['post_id'], $_POST["delete_com"]);
-    } ?>
+    ?>
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mb-3 p-3">
         <div class="container">
@@ -39,7 +33,7 @@
                     <a class="nav-item nav-link me-4" href="./index.php">Home</a>
                     <?php foreach ($data as $d) { ?>
                         <button type="button" class="btn btn-outline-dark me-4" data-bs-toggle="modal" data-bs-target="#delModal">Delete Post</button>
-                        <a class="btn btn-outline-dark" role="button" href="edit.php?post_id=<?php echo $d['POST_ID']; ?>">Edit Post</a>
+                        <button type="button" class="btn btn-outline-dark me-4" data-bs-toggle="modal" data-bs-target="#editModal">Edit Post</button>
                     <?php } ?>
                 </div>
             </div>
@@ -62,10 +56,6 @@
                     if ($_REQUEST['created'] == "success") {
                         alert("Succesfully created a comment!");
                     }
-                }
-
-                if (isset($_POST["submit_com"])) {
-                    createCom($_REQUEST['post_id']);
                 }
 
                 ?>
@@ -133,6 +123,39 @@
                     </div>
                 </div>
             </div>
+        </div>
+    <?php } ?>
+
+    <?php foreach ($data as $d) { ?>
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="editModalLabel">Editing this post</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="POST">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="Input1" class="form-label">Article Title</label>
+                                <input type="text" name="title" class="form-control" id="Input1" value=<?php echo $d['POST_TITLE']; ?> required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Input2" class="form-label">Author</label>
+                                <input type="text" name="author" class="form-control" id="Input2" value=<?php echo $d['POST_AUTHOR']; ?> required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Input3" class="form-label">Content</label>
+                                <textarea class="form-control" name="content" id="Input3" rows="12" required><?php echo $d['POST_CONTENT']; ?></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success" name="edit_post">Confirm Edit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         </div>
     <?php } ?>
 
