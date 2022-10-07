@@ -3,6 +3,8 @@ A simple blog website.
 
 ## Website
 http://tomasinoblog.atwebpages.com/
+or
+https://tomasinoblog.000webhostapp.com/
 
 ## Features
 - Create a Post
