@@ -55,8 +55,11 @@ function createPost()
     include 'conn.php';
     // Creates the post
     $title = $_REQUEST["title"];
+    $title= mysqli_real_escape_string($conn , $title);
     $author = $_REQUEST["author"];
+    $author= mysqli_real_escape_string($conn , $author);
     $content = $_REQUEST["content"];
+    $content= mysqli_real_escape_string($conn , $content);
 
     $sql = "INSERT INTO post(POST_TITLE, POST_AUTHOR, POST_CONTENT) VALUES('$title', '$author', '$content')";
     mysqli_query($conn, $sql);
@@ -92,8 +95,11 @@ function editPost() {
     include 'conn.php';
     $id = $_REQUEST['post_id'];
     $title = $_REQUEST["title"];
+    $title= mysqli_real_escape_string($conn , $title);
     $author = $_REQUEST["author"];
+    $author= mysqli_real_escape_string($conn , $author);
     $content = $_REQUEST["content"];
+    $content= mysqli_real_escape_string($conn , $content);
 
     $sql = "UPDATE post SET POST_TITLE = '$title', POST_AUTHOR = '$author', POST_CONTENT = '$content' WHERE POST_ID = '$id'";
     mysqli_query($conn, $sql);
@@ -130,7 +136,9 @@ function createCom($post_id)
 {
     include 'conn.php';
     $author = $_REQUEST["author"];
+    $author= mysqli_real_escape_string($conn , $author);
     $content = $_REQUEST["content"];
+    $content= mysqli_real_escape_string($conn , $content);
 
     $sql = "INSERT INTO comment(COM_AUTHOR, COM_CONTENT, POST_ID) VALUES('$author', '$content', '$post_id')";
     mysqli_query($conn, $sql);

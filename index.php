@@ -90,7 +90,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="createModalLabel">Editing this post</h1>
+                    <h1 class="modal-title fs-5" id="createModalLabel">Creating a post!</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Create a Post Form -->

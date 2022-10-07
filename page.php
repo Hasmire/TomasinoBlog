@@ -154,7 +154,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="editModalLabel">Editing this post</h1>
+                        <h1 class="modal-title fs-5" id="editModalLabel">Editing this post!</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <!-- Edit Post Form -->
@@ -162,11 +162,11 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="Input1" class="form-label">Article Title</label>
-                                <input type="text" name="title" class="form-control" id="Input1" value=<?php echo $d['POST_TITLE']; ?> required>
+                                <input type="text" name="title" class="form-control" id="Input1" value='<?php echo $d['POST_TITLE']; ?>' required>
                             </div>
                             <div class="mb-3">
                                 <label for="Input2" class="form-label">Author</label>
-                                <input type="text" name="author" class="form-control" id="Input2" value=<?php echo $d['POST_AUTHOR']; ?> required>
+                                <input type="text" name="author" class="form-control" id="Input2" value='<?php echo $d['POST_AUTHOR']; ?>' required>
                             </div>
                             <div class="mb-3">
                                 <label for="Input3" class="form-label">Content</label>
