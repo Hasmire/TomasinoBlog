@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomasino Blog: Single Post</title>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link href="https://fonts.cdnfonts.com/css/din-condensed" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/eingrantch-mono" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css" />
 </head>
@@ -26,13 +29,13 @@
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mb-3 p-3">
         <div class="container">
-            <i class="fas fa-cat fa-2x me-3"></i>
-            <span class="navbar-brand mb-0 h1">Tomasino Blog</span>
+            <i class="fas fa-cat fa-2x me-3 cat"></i>
+            <span class="navbar-brand mb-0 h1 title">Tomasino Blog</span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="navbar-nav ms-auto order-3">
+                <div class="navbar-nav ms-auto order-3 right-nav">
                     <a class="nav-item nav-link me-4" href="./index.php">Home</a>
                     <?php foreach ($data as $d) { ?>
                         <button type="button" class="btn btn-outline-dark me-4" data-bs-toggle="modal" data-bs-target="#delModal">Delete Post</button>
@@ -66,17 +69,19 @@
                 }
 
                 ?>
-                <div class="card">
+                <div class="card p-3 mb-3">
                     <div class="card-body">
                         <?php foreach ($data as $d) { ?>
-                            <h1><?php echo $d['POST_TITLE']; ?></h1>
-                            <h5><?php echo "By: ", $d['POST_AUTHOR'], " | ", $d['POST_DATE']; ?></h5>
-                            <?php echo nl2br($d['POST_CONTENT']); ?>
+                            <h2 class="mb-2"><?php echo $d['POST_TITLE']; ?></h2>
+                            <h6 class="mb-4"><?php echo "By: ", $d['POST_AUTHOR'], " | ", $d['POST_DATE']; ?></h6>
+                            <div class="text-justify">
+                                <?php echo nl2br($d['POST_CONTENT']); ?>
+                            </div>
                         <?php } ?>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-body p-4">
+                <div class="card p-3">
+                    <div class="card-body">
                         <div class="d-flex justify-content-between mb-4">
                             <h4>Comment Section:</h4>
                             <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#addComment">Add a comment</button>
@@ -84,7 +89,7 @@
                         <div class="row">
                             <div class="col">
                                 <?php foreach ($data_com as $d) { ?>
-                                    <div class="d-flex flex-start mb-3 align-items-center">
+                                    <div class="d-flex flex-start mb-3 align-items-center justify-content-center p-1" style="border: 2px solid var(--background-color); border-radius: 8px">
                                         <i class='fas fa-user-alt fa-2x me-3'></i>
                                         <div class="flex-grow-1 flex-shrink-1">
                                             <div>
