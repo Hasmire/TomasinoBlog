@@ -8,3 +8,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.links {
+    text-decoration: none;
+}

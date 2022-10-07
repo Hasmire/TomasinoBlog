@@ -6,32 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomasino Blog: Create a Post</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
+    <?php
+    include 'function.php';
+    $data = viewPost();
+    if (isset($_POST["edit_post"])) {
+        editPost();
+    }
+    ?>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mb-3 p-3">
         <div class="container">
-            <span class="navbar-brand mb-0 h1">Tomasino Blog: Edit a Post</span>
+            <i class="fas fa-cat fa-2x me-3"></i>
+            <span class="navbar-brand mb-0 h1">Tomasino Blog</span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-item nav-link" href="./index.php">Home</a>
+                    <a class="nav-item nav-link me-4" href="./index.php">Home</a>
+                    <?php foreach ($data as $d) { ?>
+                        <a class="btn btn-outline-dark me-4" role="button" href="page.php?post_id=<?php echo $d['POST_ID']; ?>">Go Back</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
     </nav>
 
     <?php
-    include 'function.php';
     checkConnection();
-    $data = viewPost();
-    if (isset($_POST["edit_post"])) {
-        editPost();
-    }
     ?>
 
     <div class="container w-50">

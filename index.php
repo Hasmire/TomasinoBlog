@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomasino Blog</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css" />
 </head>
@@ -13,6 +14,7 @@
 <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mb-3 p-3">
         <div class="container">
+            <i class="fas fa-cat fa-2x me-3"></i>
             <span class="navbar-brand mb-0 h1">Tomasino Blog</span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,32 +34,23 @@
         checkConnection();
         $data = getData();
 
-        if (isset($_REQUEST['created'])) { ?>
-            <?php if ($_REQUEST['created'] == "success") { ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Succesfully created a new post!</strong> Your news feed has been updated.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php } ?>
-        <?php }
+        if (isset($_REQUEST['created'])) {
+            if ($_REQUEST['created'] == "success") {
+                alert("Succesfully created a new post!");
+            }
+        }
 
-        if (isset($_REQUEST['deleted'])) { ?>
-            <?php if ($_REQUEST['deleted'] == "success") { ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Succesfully deleted a post!</strong> Your news feed has been updated.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php } ?>
-        <?php }
+        if (isset($_REQUEST['deleted'])) {
+            if ($_REQUEST['deleted'] == "success") {
+                alert("Succesfully deleted a post!");
+            }
+        }
 
-        if (isset($_REQUEST['update'])) { ?>
-            <?php if ($_REQUEST['update'] == "success") { ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Succesfully edited a post!</strong> Your news feed has been updated.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php } ?>
-        <?php } ?>
+        if (isset($_REQUEST['update'])) {
+            if ($_REQUEST['update'] == "success") {
+                alert("Succesfully updated a post!");
+            }
+        } ?>
 
         <div class="card-group">
             <div class="row">
