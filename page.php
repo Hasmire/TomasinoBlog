@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomasino Blog: Single Post</title>
     <!-- Font Awesome Icons -->
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src='https://kit.fontawesome.com/2f54b60b72.js' crossorigin='anonymous'></script>
 
     <!-- Fonts -->
     <link href="https://fonts.cdnfonts.com/css/eingrantch-mono" rel="stylesheet">
@@ -42,7 +42,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav ms-auto order-3 right-nav">
                     <?php foreach ($data as $d) { ?>
-                        <button type="button" class="btn me-4" data-bs-toggle="modal" data-bs-target="#delModal"><i class="fas fa-trash fa-2x"></i></button>
+                        <button type="button" class="btn me-4" data-bs-toggle="modal" data-bs-target="#delModal"><i class="fas fa-trash-alt fa-2x"></i></button>
                         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit fa-2x"></i></button>
                     <?php } ?>
                 </div>
@@ -109,7 +109,7 @@
                                                     </p>
                                                     <!-- Delete Comment -->
                                                     <form method="POST">
-                                                        <button type="submit" class="btn" name="delete_com" value="<?php echo $d['COM_ID']; ?>"><i class="fas fa-trash fa-s"></i><span class="small"></span></button>
+                                                        <button type="submit" class="btn" name="delete_com" value="<?php echo $d['COM_ID']; ?>"><i class="fas fa-trash-alt fa-1x"></i></button>
                                                     </form>
                                                 </div>
                                                 <p class="small mb-0">

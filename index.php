@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomasino Blog</title>
     <!-- Font Awesome Icons -->
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src='https://kit.fontawesome.com/2f54b60b72.js' crossorigin='anonymous'></script>
 
     <!-- Fonts -->
     <link href="https://fonts.cdnfonts.com/css/eingrantch-mono" rel="stylesheet">
