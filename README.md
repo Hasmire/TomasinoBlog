@@ -2,7 +2,7 @@
 A simple blog website.
 
 ## Website
-https://www.example.com/
+http://tomasinoblog.atwebpages.com/
 
 ## Features
 - Create a Post
