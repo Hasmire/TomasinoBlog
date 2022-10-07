@@ -78,7 +78,6 @@ function delPost()
     $id = $_REQUEST['post_id'];
     $sql = "DELETE FROM post WHERE POST_ID = $id";
     mysqli_query($conn, $sql);
-
     header('Location: index.php?deleted=success');
     exit();
 }
