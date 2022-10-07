@@ -23,17 +23,18 @@
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mb-3 p-3">
         <div class="container">
-            <i class="fas fa-cat fa-2x me-3 cat"></i>
-            <span class="navbar-brand mb-0 h1 title">Tomasino Blog</span>
+            <a href="./index.php">
+                <i class="fas fa-cat fa-2x me-3 cat"></i>
+                <span class="navbar-brand mb-0 h1 title">Tomasino Blog</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav ms-auto order-3 right-nav">
-                    <a class="nav-item nav-link me-4" href="./index.php">Home</a>
                     <?php foreach ($data as $d) { ?>
-                        <button type="button" class="btn btn-outline-dark me-4" data-bs-toggle="modal" data-bs-target="#delModal">Delete Post</button>
-                        <button type="button" class="btn btn-outline-dark me-4" data-bs-toggle="modal" data-bs-target="#editModal">Edit Post</button>
+                        <button type="button" class="btn me-4" data-bs-toggle="modal" data-bs-target="#delModal"><i class="fas fa-trash fa-2x"></i></button>
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit fa-2x"></i></button>
                     <?php } ?>
                 </div>
             </div>
@@ -74,7 +75,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-4">
                             <h4>Comment Section:</h4>
-                            <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#addComment">Add a comment</button>
+                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#addComment"><i class="fas fa-comment fa-2x"></i></button>
                         </div>
                         <div class="row">
                             <div class="col">
@@ -88,7 +89,7 @@
                                                         <?php echo $d['COM_AUTHOR']; ?> <span class="small">- <?php echo $d['COM_DATE']; ?></span>
                                                     </p>
                                                     <form method="POST">
-                                                        <button type="submit" class="btn btn-light" name="delete_com" value="<?php echo $d['COM_ID']; ?>"><i class="far fa-trash-alt fa-xs"></i><span class="small"> delete</span></button>
+                                                        <button type="submit" class="btn" name="delete_com" value="<?php echo $d['COM_ID']; ?>"><i class="fas fa-trash fa-s"></i><span class="small"></span></button>
                                                     </form>
                                                 </div>
                                                 <p class="small mb-0">

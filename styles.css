@@ -1,7 +1,7 @@
 :root {
     --background-color: #272727;
     --background-color2: #f7f2f2;
-    --header-footer-color: #1c1b1b;
+    --background-color3: #dfdbdb;
     --text-color: #d1cfcf;
     --color-accent1: #FF652F;
     --color-accent2: #FFE400;
@@ -12,6 +12,10 @@ body {
     font-family: 'Merriweather', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
 }
 
 .cat {
@@ -39,6 +43,12 @@ nav {
     color: var(--background-color);
 }
 
+.card.index:hover {
+    background-color: var(--background-color3);
+    color: var(--background-color);
+}
+
+
 .right-nav {
     font-family: 'Open Sans';
 }
@@ -48,10 +58,11 @@ nav {
 }
 
 .text-truncate-container p {
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 5;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    text-overflow: hidden;
 }
 
 .btn-light {
@@ -74,11 +85,46 @@ nav {
     background-color: var(--background-color2);
 }
 
-.btn-outline-dark:hover {
-    background-color: var(--color-accent2);
+.modal-content {
     color: var(--background-color);
 }
 
-.modal-content {
+.fa-home {
     color: var(--background-color);
+}
+
+.fa-home:hover {
+    color: var(--color-accent2);
+}
+
+.fa-trash {
+    color: var(--background-color);
+}
+
+.fa-trash:hover {
+    color: var(--color-accent1);
+}
+
+.fa-edit {
+    color: var(--background-color);
+}
+
+.fa-edit:hover {
+    color: var(--color-accent3);
+}
+
+.fa-comment {
+    color: var(--background-color);
+}
+
+.fa-comment:hover {
+    color: var(--color-accent3);
+}
+
+.fa-file {
+    color: var(--background-color);
+}
+
+.fa-file:hover {
+    color: var(--color-accent3);
 }

@@ -17,15 +17,16 @@
 <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light mb-3 p-3">
         <div class="container">
-            <i class="fas fa-cat fa-2x me-3 cat"></i>
-            <span class="navbar-brand mb-0 h1 title">Tomasino Blog</span>
+            <a href="./index.php">
+                <i class="fas fa-cat fa-2x me-3 cat"></i>
+                <span class="navbar-brand mb-0 h1 title">Tomasino Blog</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav ms-auto right-nav">
-                    <a class="nav-link active me-4" aria-current="page" href="./index.php">Home</a>
-                    <button type="button" class="btn btn-outline-dark me-4" data-bs-toggle="modal" data-bs-target="#createModal">Create a Post</button>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#createModal"><i class="fas fa-file fa-2x"></i></button>
                 </div>
             </div>
         </div>
@@ -59,12 +60,12 @@
             <div class="row">
                 <?php foreach ($data as $d) { ?>
                     <div class="col-4 mb-3" style="height: 300px;">
-                        <div class="card h-100">
+                        <div class="card h-100 index">
                             <div class="card-body text-truncate-container">
                                 <h4 class="card-title"><?php echo $d['POST_TITLE']; ?></h4>
                                 <small class="card-text text-muted"><?php echo 'By: ', $d['POST_AUTHOR'], ' | ', $d['POST_DATE']; ?></small>
-                                <p class="card-text text-justify"><?php echo $d['POST_CONTENT']; ?></p>
-                                <a href="page.php?post_id=<?php echo $d['POST_ID']; ?>" class="btn btn-warning">View Article</a>
+                                <p class="card-text"><?php echo $d['POST_CONTENT']; ?></p>
+                                <a href="page.php?post_id=<?php echo $d['POST_ID']; ?>" class="stretched-link"></a>
                             </div>
                         </div>
                     </div>
