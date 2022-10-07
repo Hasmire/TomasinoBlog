@@ -1,5 +1,5 @@
 <?php
-
+// Checks if the buttons are pushed or submmited
 if (isset($_POST["submit_post"])) {
     createPost();
 }
@@ -20,6 +20,7 @@ if (isset($_POST["submit_com"])) {
     createCom($_REQUEST['post_id']);
 }
 
+// Checks the database connection
 function checkConnection()
 {
     include 'conn.php';
@@ -31,6 +32,7 @@ function checkConnection()
     }
 }
 
+// Sends out a notification
 function alert($string) {
     echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>";
     echo "<strong>$string</strong> Your news feed has been updated.";
@@ -38,15 +40,16 @@ function alert($string) {
     echo "</div>";
 }
 
+// Gets all the data from the database
 function getData()
 {
     include 'conn.php';
-    // Gets the data from the database
     $sql = "SELECT * FROM post";
     $data = mysqli_query($conn, $sql);
     return $data;
 }
 
+// Creating a post
 function createPost()
 {
     include 'conn.php';
@@ -62,6 +65,7 @@ function createPost()
     exit();
 }
 
+// Selecting a spcefied post
 function viewPost()
 {
     include 'conn.php';
@@ -72,6 +76,7 @@ function viewPost()
     return $data;
 }
 
+// Deleting a specified post
 function delPost()
 {
     include 'conn.php';
@@ -82,9 +87,9 @@ function delPost()
     exit();
 }
 
+// Editing a specified post
 function editPost() {
     include 'conn.php';
-    // Creates the post
     $id = $_REQUEST['post_id'];
     $title = $_REQUEST["title"];
     $author = $_REQUEST["author"];
@@ -97,6 +102,7 @@ function editPost() {
     exit();
 }
 
+// Getting all comments that are inside the post
 function getCom() {
     include 'conn.php';
     $id = $_REQUEST['post_id'];
@@ -106,6 +112,7 @@ function getCom() {
     return $data;
 }
 
+// Delete a comment from the post
 function delCom($post_id, $id)
 {
     include 'conn.php';
@@ -118,10 +125,10 @@ function delCom($post_id, $id)
     exit();
 }
 
+// Creating a comment inside the post
 function createCom($post_id)
 {
     include 'conn.php';
-    // Creates the post
     $author = $_REQUEST["author"];
     $content = $_REQUEST["content"];
 

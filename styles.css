@@ -18,13 +18,14 @@ a {
     text-decoration: none;
 }
 
-.cat {
-    color: var(--background-color);
-}
-
+/* Navbar */
 nav {
     background-color: var(--background-color2);
     color: var(--background-color);
+}
+
+.right-nav {
+    font-family: 'Open Sans';
 }
 
 .title {
@@ -33,6 +34,7 @@ nav {
     font-size: 2em;
 }
 
+/* Content */
 .card-title {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
@@ -48,11 +50,6 @@ nav {
     color: var(--background-color);
 }
 
-
-.right-nav {
-    font-family: 'Open Sans';
-}
-
 .text-justify {
     text-align: justify;
 }
@@ -65,6 +62,7 @@ nav {
     text-overflow: hidden;
 }
 
+/* Buttons */
 .btn-light {
     background-color: var(--background-color2);
 }
@@ -86,6 +84,11 @@ nav {
 }
 
 .modal-content {
+    color: var(--background-color);
+}
+
+/* Icons */
+.fa-cat {
     color: var(--background-color);
 }
 

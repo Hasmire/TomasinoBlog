@@ -1,5 +1,4 @@
 <?php 
-// Turn some of these into functions
 // Connection to the database
 $dbhost = "127.0.0.1";
 $dbuser = "root";
