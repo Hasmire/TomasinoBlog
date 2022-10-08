@@ -100,11 +100,11 @@ nav {
     color: var(--color-accent2);
 }
 
-.fa-trash {
+.fa-trash-alt {
     color: var(--background-color);
 }
 
-.fa-trash:hover {
+.fa-trash-alt:hover {
     color: var(--color-accent1);
 }
 
